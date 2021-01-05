@@ -2,28 +2,72 @@
 //LOGO
 .logo {
     height: 3.25rem;
+    margin-left: 3rem;
 }
 
 ////////////////////////////////////
 //SEARCH
 .search {
-    &__input {
+    flex: 0 0 40%;
 
+    //use flex instead of messing with margins, translates , floats, text-align center
+    //the flex items for this search container are input and search button
+    display: flex; //flex item becoming flex container ; nested flex box; 
+    align-items: center; //default is strech
+    justify-content: center;
+
+    &__input {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background-color: var(--color-grey-light-2);
+        border: none;
+        padding: .7rem 2rem;
+        border-radius: 100px;
+        width: 90%;
+        transition: all .2s;
+        margin-right: -3.25rem;
+
+        &:focus {
+            outline: none;
+            width: 100%;
+            background-color: var(--color-grey-light-3);
+        }
+
+        &::-webkit-input-placeholder {
+            font-weight: 100;
+            color: var(--color-grey-light-4);
+        }
+    }
+
+    &__input:focus + &__button {
+        background-color: var(--color-grey-light-3);
     }
 
     &__button {
+        border: none;
+        background-color: var(--color-grey-light-2);
 
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            
+        }
     }
 
     &__icon {
         height: 2rem;
         width: 2rem;
+        fill: var(--color-grey-dark-3);
     }
 }
 
 ////////////////////////////////////
 //USER NAVIGATION
 .user-nav {
+    background-color: greenyellow;
     &__icon-box {
 
     }
